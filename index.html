@@ -5,98 +5,129 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>movie/series Finder</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Bootstrap CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <title>Best Movie Watching Platform</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSVOpx2WWuUxg-lQixvOqROr-z8V2bQWe188B2_MFBzRVwDwcySjKrnc&s=10');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        h1, h2 {
+            color: #fff;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.5); /* Transparent black */
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #007bff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Scrollable content if the page is too long */
+        body, html {
+            height: 100%;
+        }
+    </style>
 
 </head>
 
 <body>
-    
 
-    <!-- Bootstrap Toast for Note -->
-
-    <div class="alert alert-info" role="alert" id="alert">
-
-        Press the search button everytime to regenerate the URL
-
-      </div>
-
-
-
-    <div class="container">
-
-        <div class="container">
-
-            <div class="section movie-section">
-
-                <h1>Movie Finder</h1>
-
-                <label for="movieName">Enter Movie Name:</label>
-
-                <input type="text" id="movieName" oninput="getMovieSuggestions()" />
-
-                <ul id="movieSuggestions"></ul>
-
-                <button onclick="searchMovie()">Search</button>
-
-                <p id="movieResult"></p>
-
-
-                <p id="movieResult2"></p>
-                <button id="movieCopyButton" onclick="copyMovieToClipboard()">Copy Movie URL</button>
-
-            </div>
-
-        
-
-            <div class="section series-section">
-
-                <h1>Series Finder</h1>
-
-                <label for="seriesName">Enter Series Name:</label>
-
-                <input type="text" id="seriesName" oninput="getSeriesSuggestions()" />
-
-                <ul id="seriesSuggestions"></ul>
-
-                <button onclick="searchSeries()">Search</button>
-
-                <p id="seriesResult"></p>
-
-                <button id="seriesCopyButton" onclick="copySeriesToClipboard()">Copy Series URL</button>
-
-
-            </div>
-
-        </div>
-
+    <!-- Header Section with Image -->
+    <div class="header">
+        <h1>Best Movie Watching Platform</h1>
     </div>
 
+    <div class="container">
+        <div class="section movie-section">
+            <h2>Movie Finder</h2>
+            <label for="movieName">Enter Movie Name:</label>
+            <input type="text" id="movieName" oninput="getMovieSuggestions()" />
+            <ul id="movieSuggestions"></ul>
+            <button onclick="searchMovie()">Search</button>
+            <p id="movieResult"></p>
+            <p id="movieResult2"></p>
+            <button id="movieCopyButton" onclick="copyMovieToClipboard()">Copy Movie URL</button>
+        </div>
+
+        <div class="section series-section">
+            <h2>Series Finder</h2>
+            <label for="seriesName">Enter Series Name:</label>
+            <input type="text" id="seriesName" oninput="getSeriesSuggestions()" />
+            <ul id="seriesSuggestions"></ul>
+            <button onclick="searchSeries()">Search</button>
+            <p id="seriesResult"></p>
+            <button id="seriesCopyButton" onclick="copySeriesToClipboard()">Copy Series URL</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>©️ 2024 Samarth</p>
+    </footer>
 
     <!-- Bootstrap JS and Popper.js -->
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script src="main.js"></script>
-
-       <!-- Script to initialize the toast -->
-
-     
 
 </body>
 
 </html>
-
